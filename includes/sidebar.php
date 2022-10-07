@@ -27,7 +27,7 @@
                    <div class="form-group">
                        <input name="name" type="text" class="form-control" placeholder="Enter name">
                    </div>
-                   <div class="form-group">
+                   <div class="input-group">
                        <input name="password" type="text" class="form-control" placeholder="Enter password">
                        <span class="input-group-btn">
                         <button class="btn btn-primary" name="login" type="submit">Submit
