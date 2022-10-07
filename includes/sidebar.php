@@ -20,36 +20,41 @@
            </div>
 
 
+           <!-- Login -->
+           <div class="well">
+               <h4>Login</h4>
+               <form action="login.php" method="post">
+                   <div class="form-group">
+                       <input name="name" type="text" class="form-control" placeholder="Enter name">
+                   </div>
+                   <div class="form-group">
+                       <input name="password" type="text" class="form-control" placeholder="Enter password">
+                       <span class="input-group-btn">
+                        <button class="btn btn-primary" name="login" type="submit">Submit
+                       </button>
+                    </span>
+                   </div>
+               
+               </form><!-- search form -->
+               <!-- /.input-group -->
+           </div>
+
            <!-- Blog Categories Well -->
            <div class="well">
                <h4>Blog Categories</h4>
                <div class="row">
-                   <div class="col-lg-6">
+                   <div class="col-lg-12">
                        <ul class="list-unstyled">
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
+                           <?php
+                            $query = "SELECT * FROM categories";
+                            $search_query = mysqli_query($connection, $query);
+
+                            while ($row = mysqli_fetch_assoc($search_query)) {
+                                $cat_title = $row['cat_title'];
+                                echo "<li><a href='#'>$cat_title</a></li>";
+                            } ?>
                        </ul>
                    </div>
-                   <!-- /.col-lg-6 -->
-                   <div class="col-lg-6">
-                       <ul class="list-unstyled">
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
-                           <li><a href="#">Category Name</a>
-                           </li>
-                       </ul>
-                   </div>
-                   <!-- /.col-lg-6 -->
                </div>
                <!-- /.row -->
            </div>
